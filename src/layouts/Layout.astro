@@ -1,0 +1,570 @@
+---
+import CelebrationPopup from "../components/CelebrationPopup.astro";
+import Preloader from "../components/Preloader.astro";
+import Header from "../components/Header.astro";
+import { getAssetUrl } from "../utils/cdn";
+
+const site = Astro.site ?? new URL("https://www.csivitchennai.in");
+const canonicalUrl = new URL(Astro.url.pathname, site);
+const ogImageUrl = new URL("/opengraph.webp", site);
+const cdnEnv = import.meta.env.PUBLIC_CDN_URL;
+let cdnOrigin: string | null = null;
+if (cdnEnv) {
+  try {
+    cdnOrigin = new URL(cdnEnv).origin;
+  } catch {
+    cdnOrigin = null;
+  }
+}
+
+const title = "CSI-VIT";
+const description =
+  "CSI-VIT is the official student chapter of the Computer Society of India at VIT Chennai, focused on building impactful technology, encouraging innovation, and growing a collaborative student community.";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/webp" href={getAssetUrl("/favicon.webp")} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl.toString()} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="CSI-VIT" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl.toString()} />
+    <meta property="og:image" content={ogImageUrl.toString()} />
+    <meta property="og:image:secure_url" content={ogImageUrl.toString()} />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="CSI-VIT" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl.toString()} />
+    <link rel="preload" as="image" href={getAssetUrl("/acm-logo-black.webp")} />
+
+    {cdnOrigin && <link rel="dns-prefetch" href={cdnOrigin} />}
+    {cdnOrigin && <link rel="preconnect" href={cdnOrigin} crossorigin />}
+    <link
+      rel="preload"
+      as="image"
+      href={getAssetUrl("/acm_topleft.webp")}
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href={getAssetUrl("/acm-logo-black.webp")}
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href={getAssetUrl("/VIT.webp")}
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href={getAssetUrl("/background_pattern.webp")}
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="video"
+      href="/ACMWebsiteVid.webm"
+      type="video/webm"
+      fetchpriority="high"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <Preloader />
+    <CelebrationPopup />
+    <div
+      class="diamond-grid"
+      style={`background-image: url('${getAssetUrl("/background_pattern.webp")}');`}
+    >
+    </div>
+    <div class="brand-logos" aria-label="CSI-VIT and VIT">
+      <img
+        src={getAssetUrl("/acm-logo-black.webp")}
+        alt="CSI-VIT"
+        class="acm-logo"
+        loading="eager"
+        decoding="async"
+        fetchpriority="high"
+      />
+      <img
+        src={getAssetUrl("/VIT.webp")}
+        alt="VIT"
+        class="vit-logo"
+        loading="eager"
+        decoding="async"
+        fetchpriority="high"
+      />
+    </div>
+    <div class="app-root min-h-screen flex flex-col">
+      <Header />
+      <main class="content flex-1 relative pt-28">
+        <slot />
+      </main>
+    </div>
+    <script>
+      import { gsap } from "gsap";
+      import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      ScrollTrigger.config({
+        limitCallbacks: true,
+        ignoreMobileResize: true,
+        autoRefreshEvents: "visibilitychange,DOMContentLoaded,load",
+      });
+
+      const refreshHard = () => {
+        // Always measure triggers NOW
+        ScrollTrigger.refresh(true);
+      };
+
+      const kickRefresh = () => {
+        refreshHard();
+        setTimeout(refreshHard, 250);
+        setTimeout(refreshHard, 900);
+      };
+
+      if (document.readyState === "complete") {
+        kickRefresh();
+      } else {
+        window.addEventListener("load", kickRefresh, { once: true });
+      }
+
+      if (document.fonts?.ready) {
+        document.fonts.ready.then(() => {
+          refreshHard();
+          setTimeout(refreshHard, 250);
+        });
+      }
+
+      let refreshTimeout = 0;
+      const scheduleRefresh = () => {
+        clearTimeout(refreshTimeout);
+        refreshTimeout = window.setTimeout(refreshHard, 150);
+      };
+
+      window.addEventListener("resize", scheduleRefresh, { passive: true });
+      window.addEventListener("orientationchange", scheduleRefresh, {
+        passive: true,
+      });
+      window.addEventListener("app:variants-mounted", () => {
+        requestAnimationFrame(() => {
+          refreshHard();
+          setTimeout(refreshHard, 150);
+        });
+      });
+
+      const isCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
+      if (isCoarsePointer) {
+        let scrollRafId = 0;
+        let stableScrollFrames = 0;
+        let lastScrollSnapshot = "";
+
+        const getScrollSnapshot = () => {
+          const viewport = window.visualViewport;
+          return [
+            window.scrollY || window.pageYOffset || 0,
+            document.documentElement.scrollTop || 0,
+            document.body.scrollTop || 0,
+            viewport?.pageTop || 0,
+            viewport?.offsetTop || 0,
+          ].join(":");
+        };
+
+        const runScrollMonitor = (force = false) => {
+          const nextSnapshot = getScrollSnapshot();
+          const scrollChanged = nextSnapshot !== lastScrollSnapshot;
+          lastScrollSnapshot = nextSnapshot;
+
+          ScrollTrigger.update();
+
+          stableScrollFrames =
+            force || scrollChanged ? 0 : stableScrollFrames + 1;
+
+          if (scrollChanged || stableScrollFrames < 12) {
+            scrollRafId = requestAnimationFrame(() => runScrollMonitor(false));
+            return;
+          }
+
+          scrollRafId = 0;
+        };
+
+        const queueScrollMonitor = (force = false) => {
+          if (force) stableScrollFrames = 0;
+          if (scrollRafId) return;
+          scrollRafId = requestAnimationFrame(() => runScrollMonitor(force));
+        };
+
+        const updateOnTouch = () => {
+          queueScrollMonitor(true);
+        };
+
+        const updateOnScroll = () => {
+          ScrollTrigger.update();
+          queueScrollMonitor(true);
+        };
+
+        document.addEventListener("touchstart", updateOnTouch, {
+          passive: true,
+        });
+        document.addEventListener("touchmove", updateOnTouch, {
+          passive: true,
+        });
+        document.addEventListener("touchend", updateOnTouch, {
+          passive: true,
+        });
+        window.addEventListener("scroll", updateOnScroll, { passive: true });
+        window.visualViewport?.addEventListener("scroll", updateOnScroll, {
+          passive: true,
+        });
+        window.visualViewport?.addEventListener("resize", updateOnScroll, {
+          passive: true,
+        });
+      }
+    </script>
+
+    <script>
+      (() => {
+        let variantRafId = 0;
+
+        const mountVariants = () => {
+          const hosts = document.querySelectorAll("[data-variant-host]");
+          if (!hosts.length) {
+            window.dispatchEvent(
+              new CustomEvent("variants-mounted", {
+                detail: { mountedAny: false, hostCount: 0 },
+              })
+            );
+            return;
+          }
+
+          const defaultQuery = "(max-width: 768px), (pointer: coarse)";
+
+          let mountedAny = false;
+          let mountedVariant = "";
+
+          hosts.forEach((host) => {
+            const element = host as HTMLElement;
+            const query = element.dataset.variantQuery || defaultQuery;
+            const isMobile = window.matchMedia(query).matches;
+            const variant = isMobile ? "mobile" : "desktop";
+            if (element.dataset.variantReady === variant) return;
+
+            const template = element.querySelector(
+              `template[data-variant="${variant}"]`
+            ) as HTMLTemplateElement | null;
+            if (!template) return;
+
+            Array.from(element.children).forEach((child) => {
+              if (child.tagName !== "TEMPLATE") {
+                child.remove();
+              }
+            });
+
+            element.appendChild(template.content.cloneNode(true));
+            element.dataset.variantReady = variant;
+            mountedAny = true;
+            mountedVariant = variant;
+          });
+
+          window.dispatchEvent(
+            new CustomEvent("variants-mounted", {
+              detail: { mountedAny, hostCount: hosts.length },
+            })
+          );
+
+          if (mountedAny) {
+            window.dispatchEvent(
+              new CustomEvent("app:variants-mounted", {
+                detail: { variant: mountedVariant },
+              })
+            );
+            requestAnimationFrame(() => {
+              window.dispatchEvent(new Event("resize"));
+            });
+          }
+        };
+
+        const queueMountVariants = () => {
+          if (variantRafId) return;
+
+          variantRafId = requestAnimationFrame(() => {
+            variantRafId = 0;
+            mountVariants();
+          });
+        };
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", mountVariants);
+        } else {
+          mountVariants();
+        }
+
+        window.addEventListener("resize", queueMountVariants, {
+          passive: true,
+        });
+        window.addEventListener("orientationchange", queueMountVariants, {
+          passive: true,
+        });
+      })();
+    </script>
+    <script>
+      (() => {
+        const root = document.documentElement;
+
+        const scaleFromWidth = (
+          width: number,
+          maxWidth: number,
+          minWidth: number,
+          maxScale: number,
+          minScale: number
+        ) => {
+          if (width >= maxWidth) return maxScale;
+          if (width <= minWidth) return minScale;
+
+          const progress = (width - minWidth) / (maxWidth - minWidth);
+          return minScale + progress * (maxScale - minScale);
+        };
+
+        const navScaleFromWidth = (width: number) => {
+          if (width > 1363) return 1;
+          if (width > 1335) {
+            return scaleFromWidth(width, 1363, 1335, 0.9, 0.8);
+          }
+          return scaleFromWidth(width, 1335, 768, 0.8, 0.75);
+        };
+
+        const applyHeaderScales = () => {
+          const width = window.innerWidth || document.documentElement.clientWidth;
+
+          root.style.setProperty(
+            "--brand-logo-scale",
+            scaleFromWidth(width, 1363, 768, 0.8, 0.55).toFixed(4)
+          );
+          root.style.setProperty(
+            "--grep-button-scale",
+            scaleFromWidth(width, 1136, 768, 0.8, 0.5).toFixed(4)
+          );
+          root.style.setProperty(
+            "--nav-bar-scale",
+            navScaleFromWidth(width).toFixed(4)
+          );
+        };
+
+        let scaleRafId = 0;
+        const queueHeaderScales = () => {
+          if (scaleRafId) return;
+          scaleRafId = requestAnimationFrame(() => {
+            scaleRafId = 0;
+            applyHeaderScales();
+          });
+        };
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", applyHeaderScales, {
+            once: true,
+          });
+        } else {
+          applyHeaderScales();
+        }
+
+        window.addEventListener("load", applyHeaderScales, { once: true });
+        window.addEventListener("resize", queueHeaderScales, { passive: true });
+        window.addEventListener("orientationchange", queueHeaderScales, {
+          passive: true,
+        });
+      })();
+    </script>
+  </body>
+</html>
+
+<style>
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    position: relative;
+    background: #0d0e0d;
+    font-family:
+      "PolySans Trial", Inter, Roboto, "Helvetica Neue", "Arial Nova",
+      "Nimbus Sans", Arial, sans-serif;
+    /* Hide scrollbar for Firefox */
+    scrollbar-width: none;
+    /* Hide scrollbar for Internet Explorer 10+ */
+    -ms-overflow-style: none;
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar {
+    /* display: none; */
+  }
+
+  :root {
+    --brand-logo-scale: 1;
+    --grep-button-scale: 1;
+    --nav-bar-scale: 1;
+  }
+
+  .diamond-grid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-image moved to inline style */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .brand-logos {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: clamp(10px, 0.9vw, 16px);
+    pointer-events: none;
+    transform: scale(var(--brand-logo-scale));
+    transform-origin: top left;
+    transition:
+      opacity 180ms ease,
+      transform 160ms ease;
+  }
+
+  .acm-logo {
+    width: auto;
+    height: 60px;
+  }
+
+  .vit-logo {
+    width: auto;
+    height: 44px;
+    object-fit: contain;
+  }
+
+  @media screen and (max-width: 952px) {
+    .brand-logos {
+      transform: scale(0.7);
+    }
+  }
+
+  @media screen and (min-width: 769px) and (max-width: 952px) {
+    .brand-logos {
+      right: 20px;
+      transform: none;
+      gap: 0;
+    }
+
+    .brand-logos .acm-logo {
+      transform: scale(0.7);
+      transform-origin: top left;
+    }
+
+    .brand-logos .vit-logo {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%) scale(0.7);
+      transform-origin: top center;
+    }
+  }
+
+  .app-root {
+    position: relative;
+    z-index: 1;
+  }
+
+  .content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media screen and (max-width: 768px) {
+    .brand-logos {
+      top: 15px;
+      left: 15px;
+      right: 15px;
+      width: auto;
+      justify-content: space-between;
+      gap: 0;
+      transform: none;
+    }
+
+    .brand-logos .acm-logo,
+    .brand-logos .vit-logo {
+      transform: scale(0.7);
+    }
+
+    .brand-logos .acm-logo {
+      transform-origin: top left;
+    }
+
+    .brand-logos .vit-logo {
+      transform-origin: top right;
+    }
+
+    .diamond-grid {
+      background-size: cover;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .brand-logos {
+      top: 10px;
+      left: 10px;
+      right: 10px;
+    }
+
+    .diamond-grid {
+      background-size: cover;
+    }
+  }
+
+  @media screen and (max-width: 427px) {
+    .brand-logos {
+      transform: none;
+    }
+
+    .brand-logos .acm-logo,
+    .brand-logos .vit-logo {
+      transform: scale(0.5);
+    }
+  }
+
+  body.mobile-menu-open .brand-logos {
+    opacity: 0;
+    pointer-events: none;
+  }
+</style>

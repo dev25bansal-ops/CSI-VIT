@@ -1,0 +1,867 @@
+---
+// Footer.astro
+import { getAssetUrl } from "../utils/cdn";
+---
+
+<div data-variant-host>
+  <template data-variant="desktop">
+    <footer id="footer" class="relative w-full overflow-hidden m-0 p-0 flex flex-col">
+      <div
+        class="hidden md:block w-full max-w-[1438px] h-0 outline outline-1 outline-offset-[-0.50px] outline-white mx-auto"
+      >
+      </div>
+
+      <div class="relative z-10 hidden md:flex flex-col min-h-[50vh] pb-8">
+        <div class="flex-grow flex flex-col lg:flex-row items-start gap-10 lg:gap-0 justify-between px-6 lg:px-16 pt-6">
+          <div class="flex-shrink-0 w-full lg:w-auto">
+            <div
+              class="text-yellow-50 text-xl font-bold font-['PolySans_Trial'] leading-tight"
+              style="font-family: 'PolySans Bold', 'PolySans Trial', sans-serif;"
+            >
+              computer society<br />of india
+            </div>
+            <div
+              class="w-fit my-4 relative flex items-center border border-zinc-100 rounded-full px-6 py-1.5 pr-8"
+            >
+              <!-- glowign dot -->
+              <div
+                class="w-3 h-3 bg-green-500 rounded-full shadow-[0_0_8px_2px_rgba(34,197,94,0.6)]
+            animate-[pulse_1.5s_ease-in-out_infinite]"
+              >
+              </div>
+
+              <div
+                class="ml-3 text-zinc-100 text-[13px] font-thin font-['PolySans_Trial'] whitespace-nowrap"
+              >
+                All systems online
+              </div>
+            </div>
+
+            <div class="mt-6 relative w-48 h-32 lg:w-52 lg:h-36">
+              <a
+                href="https://w3w.co/static.grips.limelight"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={getAssetUrl("/footer/VIT-Map.png")}
+                  alt="VIT Map"
+                  class="w-full h-full object-cover rounded-lg shadow-lg border border-zinc-700"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+              <div
+                class="absolute inset-0 opacity-30 bg-gradient-to-b from-white to-red-500 rounded-lg pointer-events-none"
+              >
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigation Sections -->
+          <div class="flex w-full lg:w-auto justify-start items-start gap-6 lg:gap-8 flex-wrap">
+            <!-- About Section -->
+            <div
+              class="w-16 inline-flex flex-col justify-start items-start gap-4"
+            >
+              <div
+                class="footer-section-title text-yellow-50 text-base font-light font-['PolySans_Trial'] uppercase"
+              >
+                About
+              </div>
+              <div
+                class="self-stretch flex flex-col justify-start items-start gap-2"
+              >
+                <a
+                  href="#about"
+                  class="self-stretch text-white text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >
+                  CSI-VIT
+                </a>
+                <a
+                  href="https://vit.ac.in"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="self-stretch text-white text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >
+                  VIT
+                </a>
+                <a
+                  href="https://www.csi-india.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="self-stretch text-white text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >
+                  CSI
+                </a>
+              </div>
+            </div>
+
+            <!-- Domains Section -->
+            <div
+              class="w-44 inline-flex flex-col justify-start items-start gap-4"
+            >
+              <div
+                class="footer-section-title text-yellow-50 text-base font-light font-['PolySans_Trial'] uppercase"
+              >
+                Domains
+              </div>
+              <div
+                class="self-stretch flex flex-col justify-start items-start gap-2"
+              >
+                <a
+                  href="#domains"
+                  class="self-stretch text-white text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >
+                  tech
+                </a>
+                <a
+                  href="#domains"
+                  class="self-stretch text-white text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >
+                  competitive coding
+                </a>
+                <a
+                  href="#domains"
+                  class="self-stretch text-white text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >
+                  design
+                </a>
+                <a
+                  href="#domains"
+                  class="self-stretch text-white text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >
+                  management
+                </a>
+                <a
+                  href="#domains"
+                  class="self-stretch text-white text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >
+                  research
+                </a>
+              </div>
+            </div>
+
+            <!-- Events Section -->
+            <div
+              class="w-36 inline-flex flex-col justify-start items-start gap-4"
+            >
+              <div
+                class="footer-section-title text-yellow-50 text-base font-light font-['PolySans_Trial'] uppercase"
+              >
+                Events
+              </div>
+              <div
+                class="self-stretch flex flex-col justify-start items-start gap-2"
+              >
+                <a
+                  href="#events"
+                  class="self-stretch text-white text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >
+                  Code2CREATE
+                </a>
+                <a
+                  href="#events"
+                  class="self-stretch text-white text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >
+                  CRYPTIC HUNT
+                </a>
+                <a
+                  href="#events"
+                  class="self-stretch text-white text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >
+                  REVERSE CODING
+                </a>
+                <a
+                  href="#events"
+                  class="self-stretch text-white text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >
+                  CODEX CRYPTUM
+                </a>
+                <a
+                  href="#events"
+                  class="self-stretch text-white text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >
+                  FORKTOBER
+                </a>
+                <a
+                  href="#events"
+                  class="self-stretch text-white text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >
+                  THE TINY HACK
+                </a>
+                <a
+                  href="#events"
+                  class="self-stretch text-white text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >
+                  APPTITUDE
+                </a>
+                <a
+                  href="#events"
+                  class="self-stretch text-[#f95f4a] text-base font-light font-['PolySans_Trial'] uppercase hover:text-red-400 transition-colors"
+                >
+                  MORE
+                </a>
+              </div>
+            </div>
+
+            <!-- Projects Section -->
+            <div
+              class="w-24 inline-flex flex-col justify-start items-start gap-4"
+            >
+              <div
+                class="footer-section-title text-yellow-50 text-base font-light font-['PolySans_Trial'] uppercase"
+              >
+                Projects
+              </div>
+              <div
+                class="self-stretch h-44 flex flex-col justify-start items-start gap-2"
+              >
+                <a
+                  href="#projects"
+                  class="self-stretch text-white text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >
+                  ACMONE
+                </a>
+                <a
+                  href="#projects"
+                  class="self-stretch text-white text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >
+                  CLI-RPG
+                </a>
+                <a
+                  href="#projects"
+                  class="self-stretch text-white text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >
+                  EXAMCOOKER
+                </a>
+                <a
+                  href="#projects"
+                  class="self-stretch text-white text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >
+                  CLITOP
+                </a>
+                <a
+                  href="#projects"
+                  class="self-stretch text-white text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >
+                  LOCALHOST
+                </a>
+                <a
+                  href="#projects"
+                  class="self-stretch text-white text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >
+                  OS
+                </a>
+                <a
+                  href="#projects"
+                  class="self-stretch text-white text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >
+                  UNIPOOL
+                </a>
+              </div>
+            </div>
+
+            <!-- Community Section -->
+            <div
+              class="w-16 inline-flex flex-col justify-start items-start gap-4"
+            >
+              <div
+                class="footer-section-title text-yellow-50 text-base font-light font-['PolySans_Trial'] uppercase"
+              >
+                Community
+              </div>
+              <div
+                class="self-stretch flex flex-col justify-start items-start gap-2"
+              >
+                <a
+                  href="#community"
+                  class="self-stretch text-white text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >
+                  outreach
+                </a>
+                <a
+                  href="#community"
+                  class="self-stretch text-white text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >
+                  sdg
+                </a>
+              </div>
+            </div>
+
+            <!-- More Section -->
+            <div
+              class="w-24 inline-flex flex-col justify-start items-start gap-4"
+            >
+              <div
+                class="footer-section-title text-[#f95f4a] text-base font-light font-['PolySans_Trial'] uppercase"
+              >
+                More
+              </div>
+              <div
+                class="self-stretch flex flex-col justify-start items-start gap-2"
+              >
+                <a
+                  href="#team"
+                  class="self-stretch text-white text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >
+                  team
+                </a>
+                <a
+                  href="#blogs"
+                  class="self-stretch text-white text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >
+                  blogs
+                </a>
+                <a
+                  href="#partners"
+                  class="self-stretch text-white text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >
+                  partners
+                </a>
+                <a
+                  href="#gallery"
+                  class="self-stretch text-white text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >
+                  gallery
+                </a>
+                <a
+                  href="#contact"
+                  class="self-stretch text-white text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >
+                  contact us
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hidden md:flex w-full flex-col items-center justify-center relative">
+        <div
+          class="flex flex-col items-center justify-center mb-4 z-30 relative"
+        >
+          <p class="text-neutral-400 text-lg lg:text-xl text-white mb-10 lg:mb-12">
+            © 2025&nbsp;CSI-VIT. All rights reserved.
+          </p>
+          <!-- Social Icons -->
+          <div class="flex flex-row items-center gap-4 mb-10 lg:mb-12 flex-wrap justify-center">
+            <a
+              href="https://www.facebook.com/csivitchennai"
+              aria-label="Facebook"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><img
+                src={getAssetUrl("/footer/Facebook.webp")}
+                alt="Facebook"
+                class="w-10 h-10 lg:w-14 lg:h-12 hover:scale-110 transition-transform"
+                loading="lazy"
+                decoding="async"
+              /></a
+            >
+            <a
+              href="https://x.com/csivitchennai"
+              aria-label="Twitter"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><img
+                src={getAssetUrl("/footer/Twitter.webp")}
+                alt="Twitter"
+                class="w-8 h-6 lg:w-10 lg:h-8 hover:scale-110 transition-transform"
+                loading="lazy"
+                decoding="async"
+              /></a
+            >
+            <a
+              href="https://www.instagram.com/csivitchennai"
+              aria-label="Instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><img
+                src={getAssetUrl("/footer/Instagram.webp")}
+                alt="Instagram"
+                class="w-10 h-10 lg:w-14 lg:h-12 hover:scale-110 transition-transform"
+                loading="lazy"
+                decoding="async"
+              /></a
+            >
+            <a
+              href="https://medium.com/csivitchennai"
+              aria-label="Medium"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><img
+                src={getAssetUrl("/footer/Medium.webp")}
+                alt="Medium"
+                class="w-10 h-10 lg:w-14 lg:h-12 hover:scale-110 transition-transform"
+                loading="lazy"
+                decoding="async"
+              /></a
+            >
+            <a
+              href="https://www.linkedin.com/company/csivitchennai"
+              aria-label="Linkedin"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><img
+                src={getAssetUrl("/footer/Linkedin.webp")}
+                alt="Linkedin"
+                class="w-10 h-10 lg:w-14 lg:h-12 hover:scale-110 transition-transform"
+                loading="lazy"
+                decoding="async"
+              /></a
+            >
+            <a
+              href="https://www.youtube.com/@csivitchennai"
+              aria-label="YouTube"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><img
+                src={getAssetUrl("/footer/youtube icon.png")}
+                alt="YouTube"
+                class="w-6 h-6 lg:w-7 lg:h-7 rounded hover:scale-110 transition-transform"
+                loading="lazy"
+                decoding="async"
+              /></a
+            >
+          </div>
+          <div class="flex items-center gap-2">
+            <img
+              src={getAssetUrl("/footer/pixel-heart.webp")}
+              alt="pixel heart"
+              class="w-5 h-5 lg:w-6 lg:h-6"
+              loading="lazy"
+              decoding="async"
+            />
+            <span
+              class="text-neutral-400 text-sm lg:text-base text-white font-['PolySans_Trial']"
+              >crafted with love by CSI-VIT</span
+            >
+          </div>
+        </div>
+        <div
+          class="absolute left-1/2 -translate-x-1/2 -bottom-110 -z-10 text-neutral-400 text-[260px] md:text-[320px] lg:text-[460px] xl:text-[568.78px] font-bold font-['PolySans_Trial'] leading-none opacity-100 select-none pointer-events-none"
+          style="line-height:0.8;"
+        >
+          csi
+        </div>
+      </div>
+      <!-- Footer Background -->
+      <div class="hidden md:flex w-full justify-center items-end mt-auto">
+        <img
+          src={getAssetUrl("/footer/footer-background.webp")}
+          alt="Footer Background"
+          class="block w-full max-w-none h-auto object-contain"
+          style="min-width:100vw;"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </footer>
+  </template>
+
+  <template data-variant="mobile">
+    <!-- Phone Screen Version -->
+    <footer
+      id="footer"
+      class="relative w-full h-auto overflow-hidden min-h-[100svh] pb-0 flex flex-col"
+    >
+      <!-- Divider line -->
+      <div
+        class="w-full h-0 outline outline-1 outline-offset-[-0.5px] outline-white mx-auto"
+      >
+      </div>
+
+      <!-- Content -->
+      <div class="relative z-10 flex flex-col px-4 sm:px-8 md:px-10 pt-4 gap-6">
+        <!-- Title -->
+        <div
+          class="text-yellow-50 text-base sm:text-lg md:text-xl font-bold leading-tight text-center font-['PolySans_Trial'] mb-2"
+        >
+          association for computing machinery
+        </div>
+
+        <!-- Navigation Sections (mobile grid) -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8 relative z-20">
+          <!-- About Section -->
+          <div
+            class="w-full inline-flex flex-col justify-start items-start gap-2 sm:gap-3"
+          >
+            <div
+              class="text-yellow-50 text-xs sm:text-sm md:text-base font-light font-['PolySans_Trial'] uppercase"
+            >
+              About
+            </div>
+            <div class="flex flex-col justify-start items-start gap-1">
+              <a
+                href="#about"
+                class="text-white text-xs sm:text-sm md:text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >CSI-VIT</a
+              >
+              <a
+                href="https://vit.ac.in"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="self-stretch text-white text-xs sm:text-sm md:text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+              >
+                VIT
+              </a>
+              <a
+                href="https://www.csi-india.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-white text-xs sm:text-sm md:text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >CSI</a
+              >
+            </div>
+          </div>
+
+          <!-- Domains Section -->
+          <div
+            class="w-full inline-flex flex-col justify-start items-start gap-2 sm:gap-3"
+          >
+            <div
+              class="text-yellow-50 text-xs sm:text-sm md:text-base font-light font-['PolySans_Trial'] uppercase"
+            >
+              Domains
+            </div>
+            <div class="flex flex-col justify-start items-start gap-1">
+              <a
+                href="#domains"
+                class="text-white text-xs sm:text-sm md:text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >tech</a
+              >
+              <a
+                href="#domains"
+                class="text-white text-xs sm:text-sm md:text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >competitive coding</a
+              >
+              <a
+                href="#domains"
+                class="text-white text-xs sm:text-sm md:text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >design</a
+              >
+              <a
+                href="#domains"
+                class="text-white text-xs sm:text-sm md:text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >management</a
+              >
+              <a
+                href="#domains"
+                class="text-white text-xs sm:text-sm md:text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >research</a
+              >
+            </div>
+          </div>
+
+          <!-- Events Section -->
+          <div
+            class="w-full inline-flex flex-col justify-start items-start gap-2 sm:gap-3"
+          >
+            <div
+              class="text-yellow-50 text-xs sm:text-sm md:text-base font-light font-['PolySans_Trial'] uppercase"
+            >
+              Events
+            </div>
+            <div class="flex flex-col justify-start items-start gap-1">
+              <a
+                href="#events"
+                class="text-white text-xs sm:text-sm md:text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >Code2CREATE</a
+              >
+              <a
+                href="#events"
+                class="text-white text-xs sm:text-sm md:text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >CRYPTIC HUNT</a
+              >
+              <a
+                href="#events"
+                class="text-white text-xs sm:text-sm md:text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >REVERSE CODING</a
+              >
+              <a
+                href="#events"
+                class="text-white text-xs sm:text-sm md:text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >CODEX CRYPTUM</a
+              >
+              <a
+                href="#events"
+                class="text-white text-xs sm:text-sm md:text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >FORKTOBER</a
+              >
+              <a
+                href="#events"
+                class="text-white text-xs sm:text-sm md:text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >THE TINY HACK</a
+              >
+              <a
+                href="#events"
+                class="text-white text-xs sm:text-sm md:text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >APPTITUDE</a
+              >
+              <a
+                href="#events"
+                class="text-[#f95f4a] text-xs sm:text-sm md:text-base font-light font-['PolySans_Trial'] uppercase hover:text-red-400 transition-colors"
+                >MORE</a
+              >
+            </div>
+          </div>
+
+          <!-- Projects Section -->
+          <div
+            class="w-full inline-flex flex-col justify-start items-start gap-2 sm:gap-3"
+          >
+            <div
+              class="text-yellow-50 text-xs sm:text-sm md:text-base font-light font-['PolySans_Trial'] uppercase"
+            >
+              Projects
+            </div>
+            <div class="flex flex-col justify-start items-start gap-1">
+              <a
+                href="#projects"
+                class="text-white text-xs sm:text-sm md:text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >ACMONE</a
+              >
+              <a
+                href="#projects"
+                class="text-white text-xs sm:text-sm md:text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >CLI-RPG</a
+              >
+              <a
+                href="#projects"
+                class="text-white text-xs sm:text-sm md:text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >EXAMCOOKER</a
+              >
+              <a
+                href="#projects"
+                class="text-white text-xs sm:text-sm md:text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >CLITOP</a
+              >
+              <a
+                href="#projects"
+                class="text-white text-xs sm:text-sm md:text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >LOCALHOST</a
+              >
+              <a
+                href="#projects"
+                class="text-white text-xs sm:text-sm md:text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >OS</a
+              >
+              <a
+                href="#projects"
+                class="text-white text-xs sm:text-sm md:text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >UNIPOOL</a
+              >
+            </div>
+          </div>
+
+          <!-- Community Section -->
+          <div
+            class="w-full inline-flex flex-col justify-start items-start gap-2 sm:gap-3"
+          >
+            <div
+              class="text-yellow-50 text-xs sm:text-sm md:text-base font-light font-['PolySans_Trial'] uppercase"
+            >
+              Community
+            </div>
+            <div class="flex flex-col justify-start items-start gap-1">
+              <a
+                href="#Community"
+                class="text-white text-xs sm:text-sm md:text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >about w</a
+              >
+              <a
+                href="#Community"
+                class="text-white text-xs sm:text-sm md:text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >events</a
+              >
+            </div>
+          </div>
+
+          <!-- More Section -->
+          <div
+            class="w-full inline-flex flex-col justify-start items-start gap-2 sm:gap-3"
+          >
+            <div
+              class="text-[#f95f4a] text-xs sm:text-sm md:text-base font-light font-['PolySans_Trial'] uppercase"
+            >
+              More
+            </div>
+            <div class="flex flex-col justify-start items-start gap-1">
+              <a
+                href="#team"
+                class="text-white text-xs sm:text-sm md:text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >team</a
+              >
+              <a
+                href="#blogs"
+                class="text-white text-xs sm:text-sm md:text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >blogs</a
+              >
+              <a
+                href="#partners"
+                class="text-white text-xs sm:text-sm md:text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >partners</a
+              >
+              <a
+                href="#gallery"
+                class="text-white text-xs sm:text-sm md:text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >gallery</a
+              >
+              <a
+                href="#contact"
+                class="text-white text-xs sm:text-sm md:text-base font-light font-['PolySans_Trial'] uppercase hover:text-yellow-50 transition-colors"
+                >contact us</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Section (mobile) -->
+      <div
+        class="w-full flex flex-col items-center justify-center relative px-4 pt-4"
+      >
+        <div
+          class="flex flex-col items-center justify-center mb-4 z-30 relative"
+        >
+          <p class="text-white text-xs sm:text-sm md:text-base mb-4 text-center">
+            © 2025&nbsp;CSI-VIT. All rights reserved.
+          </p>
+          <!-- Social Icons -->
+          <div
+            class="flex flex-row items-center gap-4 mb-6 flex-wrap justify-center"
+          >
+            <a
+              href="https://www.facebook.com/csivitchennai"
+              aria-label="Facebook"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><img
+                src={getAssetUrl("/footer/Facebook.webp")}
+                alt="Facebook"
+                class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 hover:scale-110 transition-transform"
+                loading="lazy"
+                decoding="async"
+              /></a
+            >
+            <a
+              href="https://x.com/csivitchennai"
+              aria-label="Twitter"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><img
+                src={getAssetUrl("/footer/Twitter.webp")}
+                alt="Twitter"
+                class="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 hover:scale-110 transition-transform"
+                loading="lazy"
+                decoding="async"
+              /></a
+            >
+            <a
+              href="https://www.instagram.com/csivitchennai"
+              aria-label="Instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><img
+                src={getAssetUrl("/footer/Instagram.webp")}
+                alt="Instagram"
+                class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 hover:scale-110 transition-transform"
+                loading="lazy"
+                decoding="async"
+              /></a
+            >
+            <a
+              href="https://medium.com/csivitchennai"
+              aria-label="Medium"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><img
+                src={getAssetUrl("/footer/Medium.webp")}
+                alt="Medium"
+                class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 hover:scale-110 transition-transform"
+                loading="lazy"
+                decoding="async"
+              /></a
+            >
+            <a
+              href="https://www.linkedin.com/company/csivitchennai"
+              aria-label="Linkedin"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><img
+                src={getAssetUrl("/footer/Linkedin.webp")}
+                alt="Linkedin"
+                class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 hover:scale-110 transition-transform"
+                loading="lazy"
+                decoding="async"
+              /></a
+            >
+            <a
+              href="https://www.youtube.com/@csivitchennai"
+              aria-label="YouTube"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><img
+                src={getAssetUrl("/footer/youtube icon.png")}
+                alt="YouTube"
+                class="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded hover:scale-110 transition-transform"
+                loading="lazy"
+                decoding="async"
+              /></a
+            >
+          </div>
+          <div class="flex items-center gap-2">
+            <img
+              src={getAssetUrl("/footer/pixel-heart.webp")}
+              alt="pixel heart"
+              class="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7"
+              loading="lazy"
+              decoding="async"
+            />
+            <span class="text-white text-xs sm:text-sm md:text-base font-['PolySans_Trial']"
+              >crafted with love by CSI-VIT</span
+            >
+          </div>
+          <div class="mt-6 text-center">
+            <div
+              class="text-neutral-400 text-[160px] sm:text-[200px] md:text-[260px] font-bold font-['PolySans_Trial'] leading-none opacity-100 select-none pointer-events-none"
+              style="line-height:0.8;"
+            >
+          csi
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Background (mobile) -->
+      <div class="w-full flex justify-center items-end mt-auto pointer-events-none">
+        <img
+          src={getAssetUrl("/footer/footer-background.webp")}
+          alt="Footer Background"
+          class="block w-full max-w-none h-auto object-contain opacity-90"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </footer>
+  </template>
+</div>
+
+<style>
+  @media (min-width: 768px) {
+    .footer-section-title {
+      display: inline-block;
+      padding: 0 0 0.25rem 0;
+      font-family: "PolySans_Trial", "PolySans Bold", sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border-bottom: 2px dashed currentColor;
+      background: transparent;
+      margin-bottom: 0.5em;
+      font-weight: 400;
+      box-sizing: border-box;
+    }
+  }
+</style>
