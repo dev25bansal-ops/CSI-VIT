@@ -10,7 +10,7 @@ const boardMembers = boardData?.items ?? [];
 const mainBoardMembers = boardMembers.filter(
   (member) => !member.isW && member.position !== "Faculty Coordinator"
 );
-const acmwBoardMembers = boardMembers.filter((member) => member.isW);
+const csiwBoardMembers = boardMembers.filter((member) => member.isW);
 const facultyCoordinator = boardMembers.find(
   (member) => member.position === "Faculty Coordinator"
 );
@@ -84,9 +84,9 @@ const facultyCoordinator = boardMembers.find(
     </div>
 
     {
-      acmwBoardMembers.length > 0 && (
+      csiwBoardMembers.length > 0 && (
         <div class="w-full lg:w-[70vw] self-center flex flex-wrap justify-center gap-4 mb-12">
-          {acmwBoardMembers.map((member) => (
+          {csiwBoardMembers.map((member) => (
             <div class="w-full md:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.67rem)] transition-all duration-300 hover:scale-105 hover:shadow-2xl self-center justify-center items-center flex">
               <BoardMemberCardSingular
                 title={member.title}

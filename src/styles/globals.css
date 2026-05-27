@@ -48,7 +48,7 @@ body.scroll-video-active .diamond-grid {
 }
 
 /* Community Section Selection Style */
-#acm-w ::selection {
+#csi-w ::selection {
     background: #ff007a;
     color: white;
 }

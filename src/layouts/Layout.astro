@@ -1,5 +1,4 @@
 ---
-import CelebrationPopup from "../components/CelebrationPopup.astro";
 import Preloader from "../components/Preloader.astro";
 import Header from "../components/Header.astro";
 import { getAssetUrl } from "../utils/cdn";
@@ -49,20 +48,20 @@ const description =
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageUrl.toString()} />
-    <link rel="preload" as="image" href={getAssetUrl("/acm-logo-black.webp")} />
+    <link rel="preload" as="image" href={getAssetUrl("/csi-logo-india.jpg")} />
 
     {cdnOrigin && <link rel="dns-prefetch" href={cdnOrigin} />}
     {cdnOrigin && <link rel="preconnect" href={cdnOrigin} crossorigin />}
     <link
       rel="preload"
       as="image"
-      href={getAssetUrl("/acm_topleft.webp")}
+      href={getAssetUrl("/csi_topleft.webp")}
       fetchpriority="high"
     />
     <link
       rel="preload"
       as="image"
-      href={getAssetUrl("/acm-logo-black.webp")}
+      href={getAssetUrl("/csi-logo-india.jpg")}
       fetchpriority="high"
     />
     <link
@@ -80,7 +79,7 @@ const description =
     <link
       rel="preload"
       as="video"
-      href="/ACMWebsiteVid.webm"
+      href="/CSIWebsiteVid.webm"
       type="video/webm"
       fetchpriority="high"
     />
@@ -94,7 +93,6 @@ const description =
   </head>
   <body>
     <Preloader />
-    <CelebrationPopup />
     <div
       class="diamond-grid"
       style={`background-image: url('${getAssetUrl("/background_pattern.webp")}');`}
@@ -102,9 +100,9 @@ const description =
     </div>
     <div class="brand-logos" aria-label="CSI-VIT and VIT">
       <img
-        src={getAssetUrl("/acm-logo-black.webp")}
+        src={getAssetUrl("/csi-logo-india.jpg")}
         alt="CSI-VIT"
-        class="acm-logo"
+        class="csi-logo"
         loading="eager"
         decoding="async"
         fetchpriority="high"
@@ -462,7 +460,7 @@ const description =
       transform 160ms ease;
   }
 
-  .acm-logo {
+  .csi-logo {
     width: auto;
     height: 60px;
   }
@@ -486,7 +484,7 @@ const description =
       gap: 0;
     }
 
-    .brand-logos .acm-logo {
+    .brand-logos .csi-logo {
       transform: scale(0.7);
       transform-origin: top left;
     }
@@ -522,12 +520,12 @@ const description =
       transform: none;
     }
 
-    .brand-logos .acm-logo,
+    .brand-logos .csi-logo,
     .brand-logos .vit-logo {
       transform: scale(0.7);
     }
 
-    .brand-logos .acm-logo {
+    .brand-logos .csi-logo {
       transform-origin: top left;
     }
 
@@ -557,7 +555,7 @@ const description =
       transform: none;
     }
 
-    .brand-logos .acm-logo,
+    .brand-logos .csi-logo,
     .brand-logos .vit-logo {
       transform: scale(0.5);
     }

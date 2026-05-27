@@ -44,7 +44,7 @@ const idSuffix = Math.random().toString(36).substr(2, 9);
         src={overlaySrc}
         alt={alt}
         class="rounded-3xl"
-        style={`position: absolute; left: calc(50% + ${ox}); top: calc(50% + ${oy}); transform: translate(-50%, -50%); ${sizeStyle}; z-index: -10;`}
+                style={`position: absolute; left: calc(50% + ${ox}); top: calc(50% + ${oy}); transform: translate(-50%, -50%); ${sizeStyle}; z-index: -10; border-radius: 24px;`}
         loading="lazy"
         decoding="async"
       />

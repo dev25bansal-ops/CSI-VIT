@@ -1,13 +1,13 @@
 ﻿export const projectsData = [
   {
     "cassette": {
-      "src": "/projects/acmone.webp",
+      "src": "/projects/csione.png",
       "alt": "CSIOne Image"
     },
     "textContent": {
       "blocks": [
-        "ACMOne streamlines operations for CSI VIT's 100+ organizing committee members by centralizing event planning, deadline tracking, ID scanning, and team communication in one unified platform.",
-        "Built specifically for student chapter management, the system features real-time updates, an intuitive calendar interface, and integrated collaboration tools that keep all teams synchronized. This eliminates coordination bottlenecks and reduces administrative overhead, allowing the chapter to focus on delivering impactful events and initiatives. With its clean interface and robust backend architecture, ACMOne demonstrates how thoughtful system design can solve real organizational challenges at scale."
+        "CSIOne streamlines operations for CSI VIT's 100+ organizing committee members by centralizing event planning, deadline tracking, ID scanning, and team communication in one unified platform.",
+        "Built specifically for student chapter management, the system features real-time updates, an intuitive calendar interface, and integrated collaboration tools that keep all teams synchronized. This eliminates coordination bottlenecks and reduces administrative overhead, allowing the chapter to focus on delivering impactful events and initiatives. With its clean interface and robust backend architecture, CSIOne demonstrates how thoughtful system design can solve real organizational challenges at scale."
       ]
     },
     "buttons": {
@@ -21,7 +21,7 @@
         "backgroundColor": "#F95F4A",
         "textColor": "white",
         "borderColor": "#FEFCD9",
-        "url": "https://acmone.acmvit.in"
+        "url": "https://csione.csivit.in"
       },
       "icons": []
     },
@@ -53,7 +53,7 @@
         "backgroundColor": "#2664e4",
         "textColor": "white",
         "borderColor": "#FEFCD9",
-        "url": "https://examcooker.acmvit.in"
+        "url": "https://examcooker.csivit.in"
       },
       "icons": [
         {
@@ -62,7 +62,7 @@
           "textColor": "white",
           "borderColor": "#FEFCD9",
           "iconColor": "#FEFCD9",
-          "url": "https://github.com/ACM-VIT/ExamCooker-2024"
+          "url": "https://github.com/CSI-VIT/ExamCooker-2024"
         }
       ]
     },
@@ -94,7 +94,7 @@
         "backgroundColor": "#16A34A",
         "textColor": "white",
         "borderColor": "#FEFCD9",
-        "url": "https://cli-rpg.acmvit.in"
+        "url": "https://cli-rpg.csivit.in"
       },
       "icons": []
     },
@@ -126,7 +126,7 @@
         "backgroundColor": "#7100FF",
         "textColor": "white",
         "borderColor": "#FEFCD9",
-        "url": "https://unipool.acmvit.in"
+        "url": "https://unipool.csivit.in"
       },
       "icons": []
     },
@@ -159,7 +159,7 @@
         "backgroundColor": "#eb5757",
         "textColor": "white",
         "borderColor": "#FEFCD9",
-        "url": "https://localhost.acmvit.in"
+        "url": "https://localhost.csivit.in"
       },
       "icons": [
         {
@@ -169,7 +169,7 @@
           "borderColor": "#FEFCD9",
           "iconColor": "#FEFCD9",
           "borderRadius": "41px",
-          "url": "https://github.com/ACM-VIT/enrollment-website-2024"
+          "url": "https://github.com/CSI-VIT/enrollment-website-2024"
         }
       ]
     },
@@ -203,7 +203,7 @@
         "textColor": "white",
         "borderColor": "#FEFCD9",
         "borderRadius": "41px",
-        "url": "https://os.acmvit.in"
+        "url": "https://os.csivit.in"
       },
       "icons": []
     },

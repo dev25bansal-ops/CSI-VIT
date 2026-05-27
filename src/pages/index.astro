@@ -8,13 +8,13 @@ import Gallery from "../components/Gallery.astro";
 import Board from "../components/Board.astro";
 import "../styles/globals.css";
 import Partners from "../components/Partners.astro";
-import AcmWMotto from "../components/AcmWMotto.astro";
-import AcmWContent from "../components/AcmWContent.astro";
+import CsiWMotto from "../components/CsiWMotto.astro";
+import CsiWContent from "../components/CsiWContent.astro";
 import { reader } from "../utils/reader";
 import Events from "../components/SWork.astro";
 import ContactUS from "../components/ContactUs.astro";
 import ContactUSPhone from "../phoneComponents/ContactUs_Phone.astro";
-import AcmWBento from "../components/AcmWBento.astro";
+import CsiWBento from "../components/CsiWBento.astro";
 import ProjectsScreenPhone from "../phoneComponents/ProjectScreen-Phone.astro";
 import Gallery_Phone from "../phoneComponents/Gallery_Phone.astro";
 import Hero from "../components/hero.astro";
@@ -74,8 +74,8 @@ const videoEndTime = undefined; // Use full video duration (set to specific seco
 
 <Layout>
     <ScrollVideo
-        webmSrc="/ACMWebsiteVid.webm"
-        mp4Src="/ACMWebsiteVid.mp4"
+        webmSrc="/CSIWebsiteVid.webm"
+        mp4Src="/CSIWebsiteVid.mp4"
         startTime={videoStartTime}
         endTime={videoEndTime}
     >
@@ -142,9 +142,9 @@ const videoEndTime = undefined; // Use full video duration (set to specific seco
     </section>
 
     <section id="community" class="page-section">
-        <AcmWMotto />
-        <AcmWContent />
-        <AcmWBento />
+        <CsiWMotto />
+        <CsiWContent />
+        <CsiWBento />
     </section>
 
     <Board />
